@@ -1,8 +1,6 @@
-require "minitest/autorun"
-require "minitest/reporters"
-Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
-
-require "lib/steel_vellum/character_creation"
+require_relative "test_helper"
+require "./lib/steel_vellum/character_creation"
+require "./lib/steel_vellum/races/mountain_dwarf"
 
 module SteelVellum
   class CreatingBruenorTest < Minitest::Test
@@ -12,7 +10,7 @@ module SteelVellum
       creation = CharacterCreation.new
     
       # execute
-      creation.choose_race :mountain_dwarf
+      creation.choose_race Races::MountainDwarf
       creation.pick_proficiency :smiths_tools, from: :artisans_tools
     
       # assert
