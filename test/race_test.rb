@@ -26,5 +26,15 @@ module SteelVellum
       assert_equal :medium, character.size
       assert_equal 60,      character.darkvision
     end
+    
+    def test_extending_a_character_doesnt_change_existing_traits
+      race      = Race.new(speed: 25)
+      character = Character.new
+      
+      character.speed = 30
+      character.extend race
+      
+      assert_equal 30, character.speed # hasn't changed to 25
+    end
   end
 end

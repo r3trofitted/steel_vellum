@@ -14,9 +14,9 @@ module SteelVellum
     private
   
     def assign_traits(character)
-      character.size       = @size
-      character.speed      = @speed
-      character.darkvision = @darkvision
+      character.size       ||= @size
+      character.speed      ||= @speed
+      character.darkvision ||= @darkvision
     end
   end
 end
