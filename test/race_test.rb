@@ -11,5 +11,20 @@ module SteelVellum
       assert_equal :small, race.size
       assert_equal 5, race.darkvision
     end
+    
+    def test_extending_a_character_sets_default_for_their_traits
+      race      = Race.new(speed: 25, size: :medium, darkvision: 60)
+      character = Character.new
+      
+      assert_nil character.speed
+      assert_nil character.size
+      assert_nil character.darkvision
+      
+      character.extend race
+      
+      assert_equal 25,      character.speed
+      assert_equal :medium, character.size
+      assert_equal 60,      character.darkvision
+    end
   end
 end
