@@ -1,13 +1,12 @@
 module SteelVellum
   class Character
+    attr_accessor :size
+    
     # TODO: is this method really useful? It won't be used once the character creation is done
     def ability_score_increases
     end
     
     def speed
-    end
-    
-    def size
     end
     
     def darkvision
