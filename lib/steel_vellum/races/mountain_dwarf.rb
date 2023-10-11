@@ -2,7 +2,6 @@ require_relative "../race"
 
 module SteelVellum
   module Races
-    class MountainDwarf
-    end
+    MountainDwarf = Race.new
   end
 end
